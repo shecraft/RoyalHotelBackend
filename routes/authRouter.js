@@ -3,7 +3,7 @@ const { register, login } = require("../controllers/authController")
 const userModel = require("../models/user"); 
 const authRouter = express.Router()
 
-authRouter.post("/", register)
+authRouter.post("/register", register)
 authRouter.post("/login", login)
 
 

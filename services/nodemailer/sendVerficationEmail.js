@@ -32,7 +32,7 @@ const sendVerificationEmail = async (email, name, token) => {
               Thank you for registering! Please verify your email address to activate your account.
             </p>
             <div style="text-align: center; margin: 30px 0;">
-              <a href="http://localhost:5173/api/auth/verify/${token}" 
+              <a href="http://localhost:5173/verify/${token}" 
                  style="background-color: #3498db; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">
                 Verify Email
               </a>

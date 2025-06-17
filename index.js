@@ -9,8 +9,11 @@ app.use(cors())
 // app.use(morgan())
 
 const connectToDB = require("./config/connectToDB")
-const authRouter = require("./routes/authRouter")
 connectToDB()
+const authRouter = require("./routes/authRouter")
+const bookingRouter = require("./routes/bookingRouter")
+const paymentRoutes = require("./routes/paymentRoutes")
+                           
 
 
  PORT = 4000
@@ -20,3 +23,5 @@ app.listen(PORT, ()=>{
 })
 
 app.use("/api/auth", authRouter)
+app.use("/api/bookings",  bookingRouter)
+app.use("/api/payments", paymentRoutes)
