@@ -2,8 +2,8 @@ const Payment = require("../models/payment");
 const Booking = require("../models/booking");
 
 const submitManualPayment = async (req, res) => {
-  console.log("BODY:", req.body); // 🧪 Log body
-  console.log("FILE:", req.file); // 🧪 Log file
+  console.log("BODY:", req.body); 
+  console.log("FILE:", req.file); 
 
   try {
     const { name, bankName, amount, bookingId } = req.body;
@@ -27,7 +27,7 @@ const submitManualPayment = async (req, res) => {
     // Try to update booking and check if it exists
     const updatedBooking = await Booking.findByIdAndUpdate(
       bookingId,
-      { status: "payment pending" },
+      { status: "Confirmed" },
       { new: true }
     );
 
@@ -41,7 +41,7 @@ const submitManualPayment = async (req, res) => {
       payment,
     });
   } catch (error) {
-    console.log("❌ Error:", error.message); // Helpful for debugging
+    console.log("❌ Error:", error.message); 
     res.status(500).json({
       message: "Payment failed",
       error: error.message,
